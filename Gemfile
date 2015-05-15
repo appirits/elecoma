@@ -43,3 +43,6 @@ group :development, :test do
 end
 
 gem 'comable', '~> 0.4.0'
+
+gem 'rails-i18n', '~> 4.0.0'
+gem 'devise-i18n', '~> 0.12.0'
