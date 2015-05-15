@@ -42,7 +42,7 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'comable', '~> 0.4.0'
+gem 'comable', '~> 0.4.1'
 
 gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n', '~> 0.12.0'

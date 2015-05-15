@@ -5,6 +5,7 @@ class CreateComableCategories < ActiveRecord::Migration
       t.string :name, null: false
       t.string :ancestry, index: true
       t.integer :position
+      t.timestamps null: false
     end
   end
 end

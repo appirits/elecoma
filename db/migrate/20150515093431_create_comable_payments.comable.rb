@@ -7,6 +7,7 @@ class CreateComablePayments < ActiveRecord::Migration
       t.integer :fee, null: false
       t.string :state, null: false
       t.datetime :completed_at
+      t.timestamps null: false
     end
   end
 end

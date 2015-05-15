@@ -7,8 +7,9 @@ class CreateComableStocks < ActiveRecord::Migration
       t.integer :quantity, null: false, default: 0
       t.string :sku_h_choice_name
       t.string :sku_v_choice_name
+      t.timestamps null: false
     end
 
-    add_index :comable_stocks, :code, unique: true, name: :comable_stocks_idx_01
+    add_index :comable_stocks, :code, unique: true
   end
 end

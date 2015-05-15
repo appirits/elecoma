@@ -12,6 +12,7 @@ class CreateComableAddresses < ActiveRecord::Migration
       t.string :detail
       t.string :phone_number, null: false, limit: 18
       t.datetime :last_used_at
+      t.timestamps null: false
     end
   end
 end

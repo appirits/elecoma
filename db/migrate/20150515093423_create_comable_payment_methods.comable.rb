@@ -8,6 +8,7 @@ class CreateComablePaymentMethods < ActiveRecord::Migration
       t.integer :fee, null: false
       t.integer :enable_price_from
       t.integer :enable_price_to
+      t.timestamps null: false
     end
   end
 end

@@ -8,6 +8,7 @@ class CreateComableShipments < ActiveRecord::Migration
       t.string :state, null: false
       t.string :tracking_number
       t.datetime :completed_at
+      t.timestamps null: false
     end
   end
 end

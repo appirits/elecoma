@@ -24,37 +24,45 @@ ActiveRecord::Schema.define(version: 20150515093432) do
     t.string   "detail"
     t.string   "phone_number", limit: 18, null: false
     t.datetime "last_used_at"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "comable_categories", force: :cascade do |t|
-    t.string  "name",     null: false
-    t.string  "ancestry"
-    t.integer "position"
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "comable_categories", ["ancestry"], name: "index_comable_categories_on_ancestry"
 
   create_table "comable_images", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.string  "file",       null: false
+    t.integer  "product_id", null: false
+    t.string   "file",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "comable_images", ["product_id"], name: "index_comable_images_on_product_id"
 
   create_table "comable_order_items", force: :cascade do |t|
-    t.integer "order_id",                      null: false
-    t.integer "stock_id",                      null: false
-    t.string  "name",                          null: false
-    t.string  "code",                          null: false
-    t.integer "price",                         null: false
-    t.string  "sku_h_item_name"
-    t.string  "sku_v_item_name"
-    t.string  "sku_h_choice_name"
-    t.string  "sku_v_choice_name"
-    t.integer "quantity",          default: 1, null: false
+    t.integer  "order_id",                      null: false
+    t.integer  "stock_id",                      null: false
+    t.string   "name",                          null: false
+    t.string   "code",                          null: false
+    t.integer  "price",                         null: false
+    t.string   "sku_h_item_name"
+    t.string   "sku_v_item_name"
+    t.string   "sku_h_choice_name"
+    t.string   "sku_v_choice_name"
+    t.integer  "quantity",          default: 1, null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
-  add_index "comable_order_items", ["order_id", "stock_id"], name: "comable_order_items_idx_01", unique: true
+  add_index "comable_order_items", ["order_id", "stock_id"], name: "index_comable_order_items_on_order_id_and_stock_id", unique: true
 
   create_table "comable_orders", force: :cascade do |t|
     t.integer  "user_id"
@@ -68,17 +76,21 @@ ActiveRecord::Schema.define(version: 20150515093432) do
     t.integer  "ship_address_id"
     t.string   "state"
     t.datetime "completed_at"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
-  add_index "comable_orders", ["code"], name: "comable_orders_idx_01", unique: true
+  add_index "comable_orders", ["code"], name: "index_comable_orders_on_code", unique: true
 
   create_table "comable_payment_methods", force: :cascade do |t|
-    t.string  "name",                  null: false
-    t.string  "payment_provider_type", null: false
-    t.integer "payment_provider_kind", null: false
-    t.integer "fee",                   null: false
-    t.integer "enable_price_from"
-    t.integer "enable_price_to"
+    t.string   "name",                  null: false
+    t.string   "payment_provider_type", null: false
+    t.integer  "payment_provider_kind", null: false
+    t.integer  "fee",                   null: false
+    t.integer  "enable_price_from"
+    t.integer  "enable_price_to"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "comable_payments", force: :cascade do |t|
@@ -87,18 +99,22 @@ ActiveRecord::Schema.define(version: 20150515093432) do
     t.integer  "fee",               null: false
     t.string   "state",             null: false
     t.datetime "completed_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "comable_products", force: :cascade do |t|
-    t.string  "name",            null: false
-    t.string  "code",            null: false
-    t.integer "price",           null: false
-    t.text    "caption"
-    t.string  "sku_h_item_name"
-    t.string  "sku_v_item_name"
+    t.string   "name",            null: false
+    t.string   "code",            null: false
+    t.integer  "price",           null: false
+    t.text     "caption"
+    t.string   "sku_h_item_name"
+    t.string   "sku_v_item_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "comable_products", ["code"], name: "comable_products_idx_01", unique: true
+  add_index "comable_products", ["code"], name: "index_comable_products_on_code", unique: true
 
   create_table "comable_products_categories", force: :cascade do |t|
     t.integer "product_id",  null: false
@@ -109,10 +125,12 @@ ActiveRecord::Schema.define(version: 20150515093432) do
   add_index "comable_products_categories", ["product_id"], name: "index_comable_products_categories_on_product_id"
 
   create_table "comable_shipment_methods", force: :cascade do |t|
-    t.boolean "activate_flag", default: true, null: false
-    t.string  "name",                         null: false
-    t.integer "fee",                          null: false
-    t.string  "traking_url"
+    t.boolean  "activated_flag", default: true, null: false
+    t.string   "name",                          null: false
+    t.integer  "fee",                           null: false
+    t.string   "traking_url"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "comable_shipments", force: :cascade do |t|
@@ -122,32 +140,39 @@ ActiveRecord::Schema.define(version: 20150515093432) do
     t.string   "state",              null: false
     t.string   "tracking_number"
     t.datetime "completed_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "comable_stocks", force: :cascade do |t|
-    t.integer "product_id",                    null: false
-    t.string  "code",                          null: false
-    t.integer "quantity",          default: 0, null: false
-    t.string  "sku_h_choice_name"
-    t.string  "sku_v_choice_name"
+    t.integer  "product_id",                    null: false
+    t.string   "code",                          null: false
+    t.integer  "quantity",          default: 0, null: false
+    t.string   "sku_h_choice_name"
+    t.string   "sku_v_choice_name"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
-  add_index "comable_stocks", ["code"], name: "comable_stocks_idx_01", unique: true
+  add_index "comable_stocks", ["code"], name: "index_comable_stocks_on_code", unique: true
 
   create_table "comable_stores", force: :cascade do |t|
-    t.string  "name"
-    t.string  "meta_keywords"
-    t.string  "meta_description"
-    t.string  "email_sender"
-    t.boolean "email_activate_flag", default: true, null: false
+    t.string   "name"
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.string   "email"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "comable_trackers", force: :cascade do |t|
-    t.boolean "activate_flag", default: true, null: false
-    t.string  "name",                         null: false
-    t.string  "tracker_id"
-    t.text    "code",                         null: false
-    t.string  "place",                        null: false
+    t.boolean  "activated_flag", default: true, null: false
+    t.string   "name",                          null: false
+    t.string   "tracker_id"
+    t.text     "code",                          null: false
+    t.string   "place",                         null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "comable_users", force: :cascade do |t|
@@ -164,6 +189,8 @@ ActiveRecord::Schema.define(version: 20150515093432) do
     t.string   "last_sign_in_ip"
     t.integer  "bill_address_id"
     t.integer  "ship_address_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   add_index "comable_users", ["email"], name: "index_comable_users_on_email", unique: true

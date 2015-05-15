@@ -13,8 +13,9 @@ class CreateComableOrders < ActiveRecord::Migration
       t.references :ship_address
       t.string :state
       t.datetime :completed_at
+      t.timestamps null: false
     end
 
-    add_index :comable_orders, :code, unique: true, name: :comable_orders_idx_01
+    add_index :comable_orders, :code, unique: true
   end
 end
