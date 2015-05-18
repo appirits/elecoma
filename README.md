@@ -22,6 +22,10 @@
         ユーザー名: guest
         パスワード: pass
 
+Or press this button to create a new Heroku app:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 
 動作環境
 --------

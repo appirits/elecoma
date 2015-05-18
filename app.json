@@ -1,0 +1,16 @@
+{
+  "name": "Elecoma",
+  "description": "The eCommerce package that has been developed in Ruby on Rails.",
+  "website": "http://ec.appirits.com/",
+  "repository": "https://github.com/appirits/elecoma",
+  "logo": "https://github.com/appirits/elecoma/raw/master/public/elecoma.png",
+  "env": {
+    "RAILS_ENV": "production",
+    "BUNDLE_WITHOUT": "development:test:mysql:sqlite",
+    "ADMIN_EMAIL": "comable@example.com",
+    "ADMIN_PASSWORD": "password"
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate db:seed"
+  }
+}
