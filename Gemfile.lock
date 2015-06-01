@@ -190,11 +190,13 @@ GEM
     morrisjs-rails (0.5.1)
       railties (> 3.1, < 5)
     multi_json (1.11.0)
+    mysql2 (0.3.18)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pace-rails (0.1.3)
       jquery-rails
+    pg (0.18.2)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     rack (1.6.1)
@@ -310,6 +312,8 @@ DEPENDENCIES
   devise-i18n (~> 0.12.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mysql2
+  pg
   rails (= 4.2.1)
   rails-i18n (~> 4.0.0)
   sass-rails (~> 5.0)

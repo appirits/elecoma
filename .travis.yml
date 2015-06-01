@@ -7,10 +7,6 @@ env:
   - DB=postgresql
   - DB=mysql
   - DB=sqlite
-before_install:
-  - '[ "$DB" = "postgresql" ] && echo "gem \"pg\"" >> Gemfile || :'
-  - '[ "$DB" = "mysql" ] && echo "gem \"mysql2\"" >> Gemfile || :'
-  - bundle install
 before_script:
   - mv config/database.$DB.yml config/database.yml
   - bundle exec rake db:create RAILS_ENV=test
