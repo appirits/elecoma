@@ -12,6 +12,6 @@
     "ADMIN_PASSWORD": "password"
   },
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate db:seed"
+    "postdeploy": "ln -sf database.postgresql.yml config/database.yml && bundle exec rake db:migrate db:seed"
   }
 }
