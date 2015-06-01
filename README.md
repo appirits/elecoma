@@ -14,15 +14,14 @@
 ----
 
 下記ページより、動作画面をご確認いただけます。
-（デモページはエレコマ3.3.0のものになります）
 
 - [フロントページ](http://demo-ec.appirits.jp)
 - [管理画面](http://demo-ec.appirits.jp/admin)
 
-        ユーザー名: guest
-        パスワード: pass
+        ユーザー名: elecoma@example.com
+        パスワード: password
 
-Or press this button to create a new Heroku app:
+また、下記のボタンから Heroku を使ってアプリケーションを立ち上げることも可能です。
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
@@ -41,7 +40,7 @@ Or press this button to create a new Heroku app:
 インストール手順
 ----------------
 
-pending...
+[Wiki: セットアップ方法](https://github.com/appirits/elecoma/wiki#%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E6%96%B9%E6%B3%95)
 
 
 
