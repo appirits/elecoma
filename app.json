@@ -5,6 +5,7 @@
   "repository": "https://github.com/appirits/elecoma",
   "logo": "https://github.com/appirits/elecoma/raw/master/public/elecoma.png",
   "env": {
+    "HEROKU_RUBY_VERSION": "2.2.0",
     "RAILS_ENV": "production",
     "BUNDLE_WITHOUT": "development:test:mysql:sqlite",
     "ADMIN_EMAIL": "comable@example.com",
