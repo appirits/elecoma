@@ -13,7 +13,7 @@ Comable.class_eval do
     end
 
     def version
-      '4.0.0'
+      '4.1.0'
     end
   end
 end
